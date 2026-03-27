@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanti Auguri ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a0dad, #c77dff);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      font-size: 3em;
+      z-index: 1;
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 1.8em;
+      margin-top: 20px;
+      z-index: 1;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .heart {
+      position: absolute;
+      top: -10px;
+      color: #d8b4fe;
+      font-size: 20px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>🎉 TANTI AUGURI +15 🎉</h1>
+    <p>Ti amo un sacco amore 💜</p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '💜';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
